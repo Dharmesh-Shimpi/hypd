@@ -48,6 +48,56 @@ const ScrollComponent = () => {
         observer.unobserve(section);
       });
     };
+"use client";
+
+import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
+
+const textData = [
+  "01 create 🛒🛒 sign up & create your own store in under 30 seconds",
+  "02 curate 👗👔👟 curate collections, add your favorite products or simply make your content shop-able",
+  "03 share 🔗 share your store link, collections & your product recommendations across all social media channels.",
+  "04 ka-ching! 🤑🤑 earn real money every time someone buys anything from your store",
+];
+
+const imageData = [
+  "https://dmk9je7eclmvw.cloudfront.net/assets/img/a0bacreate.png",
+  "https://dmk9je7eclmvw.cloudfront.net/assets/img/b1e2curate.png",
+  "https://dmk9je7eclmvw.cloudfront.net/assets/img/d40asharing.png",
+  "https://dmk9je7eclmvw.cloudfront.net/assets/img/e2c5earn.png",
+];
+
+const ScrollComponent = () => {
+  const [index, setIndex] = useState(0);
+  const [prevIndex, setPrevIndex] = useState(0);
+  const sectionsRef = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const sectionIndex = sectionsRef.current.indexOf(entry.target);
+            if (sectionIndex !== -1 && sectionIndex !== index) {
+              setPrevIndex(index);
+              setIndex(sectionIndex);
+            }
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    const sections = sectionsRef.current;
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
+    };
   }, [index]);
 
   return (
@@ -58,7 +108,9 @@ const ScrollComponent = () => {
           <div
             key={i}
             ref={(el) => (sectionsRef.current[i] = el)}
-            className="h-screen p-60 flex justify-center items-center transition-opacity duration-700"
+            className={`h-screen p-60 flex justify-center items-center transition-opacity duration-700 ${
+              index === i ? "opacity-100" : "opacity-0"
+            }`}
           >
             <p className="text-4xl text-white font-semibold">{text}</p>
           </div>
@@ -86,7 +138,9 @@ const ScrollComponent = () => {
                 height={800}
                 width={600}
                 layout="responsive"
-                className="object-cover"
+                className={`object-cover transition-opacity duration-700 ${
+                  index === i ? "opacity-100" : "opacity-0"
+                }`}
               />
             </div>
           ))}
