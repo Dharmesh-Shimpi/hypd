@@ -52,7 +52,7 @@ const ScrollComponent = () => {
   }, [index]);
 
   return (
-    <div className="xs:w-screen flex bg-black relative z-10">
+    <div className="flex bg-black relative z-10">
   {/* Text Section with scrolling */}
   <div className="">
     {textData.map((text, i) => (
@@ -68,8 +68,8 @@ const ScrollComponent = () => {
     ))}
   </div>
 
-  {/* Fixed Image Section with Transition */}
-  <div className="sticky top-16 md:top-24 xs:right-0 right-16 w-2/3 h-screen flex justify-center items-center overflow-hidden">
+  {/* Image Section with Transition */}
+  <div className="sticky top-16 md:top-24 xs:right-0 right-16 h-screen flex justify-center items-center overflow-hidden">
     <div
       className={`transition-transform duration-700 ease-in-out`}
       style={{
@@ -80,7 +80,6 @@ const ScrollComponent = () => {
         right: 0,
       }}
     >
-      {/* Loop through images */}
       {imageData.map((src, i) => (
         <div key={i} style={{ minWidth: "100%" }}>
           <Image
