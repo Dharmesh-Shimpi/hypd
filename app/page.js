@@ -114,7 +114,7 @@ const ParallaxComponent = () => (
 );
 
 const RandomImagesComponent = () => (
-  <div className="flex relative z-10 bg-black h-screen">
+  <div className="flex relative z-10 bg-black h-screen max-w-full">
     <Image
       src="https://dmk9je7eclmvw.cloudfront.net/assets/filters:strip_exif()/fit-in/150x150/img/1625mythpat.png"
       alt="Random"
