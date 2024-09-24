@@ -52,7 +52,7 @@ const ScrollComponent = () => {
   }, [index]);
 
   return (
-    <div className="w-screen flex bg-black relative z-10">
+    <div className="w-full flex bg-black relative z-10">
   {/* Text Section with scrolling */}
   <div className="w-full md:w-1/3">
     {textData.map((text, i) => (
@@ -69,7 +69,7 @@ const ScrollComponent = () => {
   </div>
 
   {/* Fixed Image Section with Transition */}
-  <div className="sticky top-16 md:top-24 right-0 w-full md:w-2/3 h-screen flex justify-center items-center overflow-hidden">
+  <div className="sticky top-16 md:top-24 xs:right-0 right-16 w-2/3 h-screen flex justify-center items-center overflow-hidden">
     <div
       className={`transition-transform duration-700 ease-in-out`}
       style={{
