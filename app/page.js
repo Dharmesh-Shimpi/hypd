@@ -54,7 +54,7 @@ const ScrollComponent = () => {
   return (
     <div className="min-w-screen flex bg-black relative z-10">
   {/* Text Section with scrolling */}
-  <div className="w-full md:w-1/3">
+  <div className="">
     {textData.map((text, i) => (
       <div
         key={i}
