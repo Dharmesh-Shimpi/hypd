@@ -52,7 +52,7 @@ const ScrollComponent = () => {
   }, [index]);
 
   return (
-    <div className="min-w-screen flex bg-black relative z-10">
+    <div className="xs:w-screen flex bg-black relative z-10">
   {/* Text Section with scrolling */}
   <div className="">
     {textData.map((text, i) => (
