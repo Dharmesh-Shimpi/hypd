@@ -84,7 +84,8 @@ const ScrollComponent = () => {
           <Image
             src={src}
             alt={`Image ${i + 1}`}
-            fill={true}
+            width={800}
+            height={1200}
             className={`object-cover transition-opacity duration-700 ${
               index === i ? "opacity-100" : "opacity-0"
             }`}
