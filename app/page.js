@@ -86,7 +86,6 @@ const ScrollComponent = () => {
             alt={`Image ${i + 1}`}
             layout="fill"
             objectFit="cover"
-            layout="responsive"
             className={`object-cover transition-opacity duration-700 ${
               index === i ? "opacity-100" : "opacity-0"
             }`}
