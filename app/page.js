@@ -68,7 +68,7 @@ const ScrollComponent = () => {
     ))}
   </div>
   {/* Image Section with Transition */}
-  <div className="sticky top-16 md:top-24 xs:right-0 right-16 w-3/4 h-screen flex justify-center items-center overflow-hidden">
+  <div className="sticky border top-16 md:top-24 xs:right-0 right-16 w-3/4 h-screen flex justify-center items-center overflow-hidden">
     <div
       className={`transition-transform duration-700 ease-in-out`}
       style={{
