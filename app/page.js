@@ -137,7 +137,9 @@ const RandomImagesComponent = () => (
 export default function Home() {
   return (
     <div>
+    <div className="h-screen w-screen">
       <ScrollComponent />
+    </div>
       <ParallaxComponent />
       <div className="h-[700px]"></div>
       <RandomImagesComponent />
