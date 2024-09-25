@@ -52,23 +52,23 @@ const ScrollComponent = () => {
   }, [index]);
 
   return (
-<div className="flex h-full w-full bg-black relative z-10">
+<div className="flex h-full w-full bg-black relative z-10 flex-col md:flex-row">
   {/* Text Section with scrolling */}
-  <div>
+  <div className="w-full md:w-1/2">
     {textData.map((text, i) => (
       <div
         key={i}
         ref={(el) => (sectionsRef.current[i] = el)}
-        className={`h-screen xs:p-10 md:p-60 flex justify-center items-center transition-opacity duration-700 ${
+        className={`h-screen p-10 md:p-60 flex justify-center items-center transition-opacity duration-700 ${
           index === i ? "opacity-100" : "opacity-0"
         }`}
       >
-        <p className=" xs:text-xl md:text-4xl text-white font-semibold">{text}</p>
+        <p className="xs:text-xl md:text-4xl text-white font-semibold text-center">{text}</p>
       </div>
     ))}
   </div>
   {/* Image Section with Transition */}
-  <div className="sticky border top-16 md:top-24 xs:right-0 right-16 w-3/4 h-screen flex justify-center items-center overflow-hidden">
+  <div className="sticky top-16 md:top-24 w-full md:w-1/2 h-screen flex justify-center items-center overflow-hidden">
     <div
       className={`transition-transform duration-700 ease-in-out`}
       style={{
@@ -80,13 +80,13 @@ const ScrollComponent = () => {
       }}
     >
       {imageData.map((src, i) => (
-        <div key={i} style={{ minWidth: "100%" }}>
+        <div key={i} className="min-w-full">
           <Image
             src={src}
             alt={`Image ${i + 1}`}
             width={800}
             height={1200}
-            className={`object-cover transition-opacity duration-700 ${
+            className={`object-cover w-full h-auto transition-opacity duration-700 ${
               index === i ? "opacity-100" : "opacity-0"
             }`}
           />
