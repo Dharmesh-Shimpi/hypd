@@ -52,9 +52,9 @@ const ScrollComponent = () => {
   }, [index]);
 
   return (
-    <div className="flex xs:w-[340px] bg-black relative z-10">
+    <div className="flex bg-black relative z-10">
   {/* Text Section with scrolling */}
-  <div className="">
+  
     {textData.map((text, i) => (
       <div
         key={i}
@@ -66,7 +66,6 @@ const ScrollComponent = () => {
         <p className="text-xl xs:text-2xl md:text-4xl text-white font-semibold">{text}</p>
       </div>
     ))}
-  </div>
 
   {/* Image Section with Transition */}
   <div className="sticky top-16 md:top-24 xs:right-0 right-16 w-3/4 h-screen flex justify-center items-center overflow-hidden">
@@ -85,8 +84,8 @@ const ScrollComponent = () => {
           <Image
             src={src}
             alt={`Image ${i + 1}`}
-            height={800}
-            width={600}
+            layout="fill"
+            objectFit="cover"
             layout="responsive"
             className={`object-cover transition-opacity duration-700 ${
               index === i ? "opacity-100" : "opacity-0"
@@ -114,7 +113,7 @@ const ParallaxComponent = () => (
 );
 
 const RandomImagesComponent = () => (
-  <div className="flex relative z-10 bg-black h-screen max-w-full">
+  <div className="flex relative z-10 bg-black h-screen">
     <Image
       src="https://dmk9je7eclmvw.cloudfront.net/assets/filters:strip_exif()/fit-in/150x150/img/1625mythpat.png"
       alt="Random"
