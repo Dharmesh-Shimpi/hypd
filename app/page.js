@@ -66,7 +66,7 @@ const ScrollComponent = () => {
         <p className="text-xl xs:text-2xl md:text-4xl text-white font-semibold">{text}</p>
       </div>
     ))}
-   <div>
+  </div>
   {/* Image Section with Transition */}
   <div className="sticky top-16 md:top-24 xs:right-0 right-16 w-3/4 h-screen flex justify-center items-center overflow-hidden">
     <div
