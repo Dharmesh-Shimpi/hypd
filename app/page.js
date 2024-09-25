@@ -52,9 +52,9 @@ const ScrollComponent = () => {
   }, [index]);
 
   return (
-<div className="flex h-full w-full bg-black relative z-10 flex-col md:flex-row">
+<div className="flex h-full w-full bg-black relative z-10">
   {/* Text Section with scrolling */}
-  <div className="w-full md:w-1/2">
+  <div className="w-1/2">
     {textData.map((text, i) => (
       <div
         key={i}
@@ -68,7 +68,7 @@ const ScrollComponent = () => {
     ))}
   </div>
   {/* Image Section with Transition */}
-  <div className="sticky top-16 md:top-24 w-full md:w-1/2 h-screen flex justify-center items-center overflow-hidden">
+  <div className="sticky top-16 md:top-24 w-1/2 h-screen flex justify-center items-center overflow-hidden">
     <div
       className={`transition-transform duration-700 ease-in-out`}
       style={{
