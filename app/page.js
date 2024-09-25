@@ -59,11 +59,11 @@ const ScrollComponent = () => {
       <div
         key={i}
         ref={(el) => (sectionsRef.current[i] = el)}
-        className={`h-screen p-10 md:p-60 flex justify-center items-center transition-opacity duration-700 ${
+        className={`h-screen xs:p-10 md:p-60 flex justify-center items-center transition-opacity duration-700 ${
           index === i ? "opacity-100" : "opacity-0"
         }`}
       >
-        <p className="text-xl xs:text-2xl md:text-4xl text-white font-semibold">{text}</p>
+        <p className=" xs:text-xl md:text-4xl text-white font-semibold">{text}</p>
       </div>
     ))}
   </div>
